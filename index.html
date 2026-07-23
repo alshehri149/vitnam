@@ -104,6 +104,21 @@ ul.beats li:before{content:"";position:absolute;left:0;top:17px;width:9px;height
   text-decoration:none;margin-top:10px;border-bottom:1px solid rgba(184,84,47,.4);align-self:flex-start}
 .hcard a:hover{border-bottom-color:var(--clay)}
 
+/* transfers table */
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.moves{border-collapse:collapse;width:100%;min-width:660px;font-size:15px}
+table.moves th{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mist);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--line2)}
+table.moves td{padding:14px 14px 14px 0;border-bottom:1px solid var(--line);vertical-align:top}
+table.moves tr:last-child td{border-bottom:0}
+table.moves .day{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);white-space:nowrap}
+table.moves .rt{font-weight:600}
+table.moves .clock{font-family:'IBM Plex Mono',monospace;font-size:13.5px;white-space:nowrap}
+table.moves .dur{font-family:'Bebas Neue',sans-serif;font-size:22px;line-height:1;white-space:nowrap}
+table.moves .how{font-size:13.5px;color:#4b5f56;line-height:1.5}
+.hardstop{margin-top:26px;padding:18px 20px;background:var(--ink);color:var(--paper);border-radius:2px;font-size:15px}
+.hardstop b{color:#e8a87c}
+
 /* activities by city */
 .citygrp{margin-bottom:48px}
 .citygrp:last-child{margin-bottom:0}
@@ -149,6 +164,8 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
   <div class="navin">
     <span class="brand">North Vietnam</span>
     <a href="#route">Route</a>
+    <a href="#transfers">Transfers</a>
+    <a href="#shopping">Shopping</a>
     <a href="#activities">Activities</a>
     <a href="#hotels">Hotels</a>
     <a href="#notes">Notes</a>
@@ -159,9 +176,9 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
 <div class="wrap">
 
 <header class="hero">
-  <div class="eyebrow">25 August — 1 September · Hanoi in, Hanoi out · 7 nights</div>
+  <div class="eyebrow">Lands Tue 25 Aug 07:15 · Departs Tue 1 Sep 08:45 · Hanoi both ends · 7 nights</div>
   <h1>Terraces,<br>Karst &amp;<br><span>Saltwater</span></h1>
-  <p class="standfirst">Seven days across the north for a small group. No domestic flights, no Da Nang detour — one loop that climbs to 1,600 m, drops to the rice flats, then finishes on the water.</p>
+  <p class="standfirst">Seven nights across the north for a small group. No domestic flights, no Da Nang detour — one loop that climbs to 1,600 m, drops to the rice flats, then finishes on the water. Every timing below is built backwards from the 08:45 flight home.</p>
 
   <svg class="profile" viewBox="0 0 900 170" preserveAspectRatio="none" role="img" aria-label="Elevation profile: Hanoi near sea level, climbing to Sapa at 1600 metres, descending through Ninh Binh to Lan Ha Bay at sea level">
     <line x1="0" y1="144" x2="900" y2="144" stroke="rgba(18,33,28,.2)"/>
@@ -175,8 +192,8 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
   <dl class="facts">
     <div class="fact"><dt>Nights</dt><dd>7</dd></div>
     <div class="fact"><dt>Bases</dt><dd>4</dd></div>
-    <div class="fact"><dt>Flights</dt><dd>0</dd></div>
-    <div class="fact"><dt>Longest leg</dt><dd>5.5 h</dd></div>
+    <div class="fact"><dt>Domestic flights</dt><dd>0</dd></div>
+    <div class="fact"><dt>Longest transfer</dt><dd>9 h</dd></div>
   </dl>
 </header>
 
@@ -186,23 +203,24 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
 
   <article class="leg">
     <button class="leghead" aria-expanded="true" data-leg="l1">
-      <div class="leg-meta"><div class="leg-dates">25 Aug</div><div class="leg-place">Hanoi</div></div>
-      <div><div class="legtitle">Land, eat, get on a bus</div><div class="legsum">1 night · Old Quarter · arrival day</div></div>
+      <div class="leg-meta"><div class="leg-dates">Tue<br>25 Aug</div><div class="leg-place">Hanoi</div></div>
+      <div><div class="legtitle">Land 07:15, shop, take the night train</div><div class="legsum">Night on the rails · Old Quarter by 09:30 · arrival day</div></div>
       <div class="chev">+</div>
     </button>
     <div class="legbody open" id="l1">
       <img class="shot" alt="Street life in the Hanoi Old Quarter" loading="lazy" src="https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=1400&q=72&auto=format&fit=crop">
       <div class="legcols">
         <div>
-          <div class="sechead">The day</div>
-          <p>Do nothing ambitious. Drop bags, get a SIM at the airport, let the day be about food and jet lag.</p>
+          <div class="sechead">The day, by the clock</div>
+          <p>You land at 07:15 with a full day to spend and no room booked — the night train takes tonight. Nothing ambitious: bags into hotel storage, a nap, food, and the trip's first shopping window.</p>
           <ul class="beats">
-            <li><b>Hoan Kiem Lake</b> — a slow lap on foot to reset your body clock.</li>
-            <li><b>Halal pho bo for lunch.</b> Beef noodle soup from a certified-halal kitchen — see the halal eats below.</li>
-            <li><b>Ta Hien street</b> — the Old Quarter's liveliest corner after dark. Grab a fresh sugarcane or coconut juice and watch it fill up.</li>
-            <li><b>Train Street</b> if timing lines up. Check the day's schedule locally, it shifts.</li>
+            <li><b>07:15–08:30 — landing to kerbside.</b> Immigration, bags, SIM card at arrivals. Don't assume faster.</li>
+            <li><b>08:30–09:30 — Noi Bai to the Old Quarter.</b> Allow an hour; it is 35 km. Leave bags at a hotel left-luggage desk, or pay for an early check-in and actually sleep for three hours. Worth the money after a red-eye.</li>
+            <li><b>13:00 — halal lunch,</b> then a slow lap of <b>Hoan Kiem Lake</b> to reset your body clock.</li>
+            <li><b>15:00–18:00 — shopping.</b> Uniqlo Hoan Kiem is five minutes off the lake. See the shopping section below.</li>
+            <li><b>Evening — Ta Hien street</b> for the crowds and a sugarcane juice, or <b>Train Street</b> if the schedule lines up. Check locally, it shifts.</li>
           </ul>
-          <div class="move"><b>Move</b>Night transfer to Sapa, 21:00–22:00 departure. Sleeper bus ≈6 h door to door. The train runs to Lao Cai and needs a 1 h transfer up the hill — more comfortable, more faff.</div>
+          <div class="move"><b>Move · Hanoi → Sapa · allow 9 h</b>Night train from Tran Quy Cap station, roughly 22:00 → 06:00 into Lao Cai, then a 1 h road transfer up to Sapa. Book a soft-sleeper berth. It costs more faff than the sleeper bus but you arrive able to walk — which matters when you have already flown overnight. The bus alternative leaves 21:00–22:00 and takes about 6 h door to door.</div>
         </div>
         <div>
           <div class="sechead">Where you stay</div>
@@ -224,8 +242,8 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
 
   <article class="leg">
     <button class="leghead" aria-expanded="false" data-leg="l2">
-      <div class="leg-meta"><div class="leg-dates">26–28 Aug</div><div class="leg-place">Sapa</div></div>
-      <div><div class="legtitle">Base in the valley, not the town</div><div class="legsum">3 nights · Muong Hoa · trekking</div></div>
+      <div class="leg-meta"><div class="leg-dates">Wed–Fri<br>26–28 Aug</div><div class="leg-place">Sapa</div></div>
+      <div><div class="legtitle">Base in the valley, not the town</div><div class="legsum">3 nights · Muong Hoa · arrive 07:30 Wed</div></div>
       <div class="chev">+</div>
     </button>
     <div class="legbody" id="l2">
@@ -235,12 +253,12 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
           <div class="sechead">The days</div>
           <p>Sapa town is a construction site with a view. Stay out in the valley instead — a fraction of the noise, and you wake up inside the landscape. Late August is peak green, right before the September gold.</p>
           <ul class="beats">
-            <li><b>Day 1 — Lao Chai to Ta Van trek.</b> 5–6 h, moderate, terraces and river crossings. Hire a H'mong guide from the village, not a town agency.</li>
-            <li><b>Day 2 — Fansipan.</b> Cable car, 30 min to the 3,143 m summit. Go early; cloud closes in by mid-morning.</li>
-            <li><b>Day 3 — Muong Hoa valley</b> by motorbike, or the harder trek to Y Linh Ho and Giang Ta Chai.</li>
-            <li><b>Bac Ha market</b> if you can hit a Sunday — the region's best, 2.5 h away.</li>
+            <li><b>Wed 26 — arrive 07:30, go gently.</b> Breakfast at the lodge, then the Lao Chai to Ta Van trek in the afternoon if the group has legs, or save it for Thursday. 5–6 h, moderate, terraces and river crossings. Hire a H'mong guide from the village, not a town agency.</li>
+            <li><b>Thu 27 — Fansipan.</b> Cable car, 30 min to the 3,143 m summit. Be at the station by 08:00; cloud closes in by mid-morning.</li>
+            <li><b>Fri 28 — Muong Hoa valley</b> by motorbike, or the harder trek to Y Linh Ho and Giang Ta Chai. Keep this day flexible — it is your weather buffer.</li>
+            <li><b>Bac Ha market does not work on these dates.</b> It runs Sundays only, and the one Sunday of this trip (30 Aug) you are on the coast. Skip it without regret.</li>
           </ul>
-          <div class="move"><b>Move</b>Afternoon or evening bus back to Hanoi on the 28th. Take the afternoon one if you can — you'll want a full night before Ninh Binh.</div>
+          <div class="move"><b>Move · Sapa → Ninh Binh · allow 9 h, the longest day of the trip</b>Leave Sapa 07:00 Saturday. Bus to Hanoi lands about 13:00; change vehicles and carry on south, into Tam Coc around 16:00. It is a long sit, so book a limousine van rather than a standard coach for the Sapa–Hanoi half. If the group would rather break it, sleep in Hanoi on the Saturday instead and give up the Ninh Binh night — see the swap in the crew notes.</div>
         </div>
         <div>
           <div class="sechead">Where you stay</div>
@@ -263,8 +281,8 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
 
   <article class="leg">
     <button class="leghead" aria-expanded="false" data-leg="l3">
-      <div class="leg-meta"><div class="leg-dates">29 Aug</div><div class="leg-place">Ninh Binh</div></div>
-      <div><div class="legtitle">Limestone on flat water</div><div class="legsum">1 night · Tam Coc · boats and steps</div></div>
+      <div class="leg-meta"><div class="leg-dates">Sat–Sun<br>29–30 Aug</div><div class="leg-place">Ninh Binh</div></div>
+      <div><div class="legtitle">Limestone on flat water</div><div class="legsum">1 night · Tam Coc · in 16:00 Sat, out 12:30 Sun</div></div>
       <div class="chev">+</div>
     </button>
     <div class="legbody" id="l3">
@@ -272,14 +290,14 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
       <div class="legcols">
         <div>
           <div class="sechead">The day</div>
-          <p>Two and a half hours south of Hanoi. Same karst geology as Ha Long, rising out of rice fields instead of sea — which is why they call it the inland bay.</p>
+          <p>Two and a half hours south of Hanoi. Same karst geology as Ha Long, rising out of rice fields instead of sea — which is why they call it the inland bay. You get one evening and one morning here, so the order matters.</p>
           <ul class="beats">
-            <li><b>Trang An boat tour</b> — 3 h, rowed through flooded caves. Better than Tam Coc: longer, quieter, and the rowers use their feet.</li>
-            <li><b>Hang Mua</b> — around 500 steps to a dragon on a limestone spur. Late afternoon, and the view down over Tam Coc is the shot everyone comes for.</li>
-            <li><b>Bike the back roads</b> near Bich Dong pagoda. Flat, quiet, an hour or two.</li>
+            <li><b>Sat 17:30 — Hang Mua.</b> Around 500 steps to a dragon on a limestone spur, done in the cool of the evening on the day you arrive. The view down over Tam Coc is the shot everyone comes for.</li>
+            <li><b>Sun 07:30 — Trang An boat tour.</b> 3 h, rowed through flooded caves. Better than Tam Coc: longer, quieter, and the rowers use their feet. First boats leave around 07:30 and this is the one thing here you must not miss — be at the pier for opening.</li>
+            <li><b>Bike the back roads</b> near Bich Dong pagoda if the boat finishes early. Flat, quiet, an hour.</li>
             <li><b>Goat</b> is the local dish — <i>de nui</i>, grilled or with lemongrass. Only worth ordering where the kitchen can confirm halal slaughter; the Indian halal places below will do it properly.</li>
           </ul>
-          <div class="move"><b>Move</b>Ninh Binh to Cat Ba, roughly 4–5 h via Hai Phong including the ferry. Direct shuttles run daily; book the day before.</div>
+          <div class="move"><b>Move · Ninh Binh → Cat Ba · allow 5 h</b>Leave Tam Coc about 12:30 Sunday, straight off the Trang An boat. Direct shuttles run daily via Hai Phong and the ferry, landing on Cat Ba around 17:30. Book the day before and confirm the ferry time — this is the one connection weather can break, and the last crossings go mid-afternoon.</div>
         </div>
         <div>
           <div class="sechead">Where you stay</div>
@@ -301,8 +319,8 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
 
   <article class="leg">
     <button class="leghead" aria-expanded="false" data-leg="l4">
-      <div class="leg-meta"><div class="leg-dates">30–31 Aug</div><div class="leg-place">Lan Ha Bay</div></div>
-      <div><div class="legtitle">The bay, minus the fleet</div><div class="legsum">2 nights · Cat Ba · kayaks and swimming</div></div>
+      <div class="leg-meta"><div class="leg-dates">Sun–Mon<br>30–31 Aug</div><div class="leg-place">Lan Ha Bay</div></div>
+      <div><div class="legtitle">The bay, minus the fleet</div><div class="legsum">1 night · Cat Ba island base · day boat Monday</div></div>
       <div class="chev">+</div>
     </button>
     <div class="legbody" id="l4">
@@ -310,20 +328,20 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
       <div class="legcols">
         <div>
           <div class="sechead">The days</div>
-          <p>Lan Ha is the southern lobe of the same drowned karst system as Ha Long, reached from Cat Ba. Same rock towers, a fraction of the boats.</p>
+          <p>Lan Ha is the southern lobe of the same drowned karst system as Ha Long, reached from Cat Ba. Same rock towers, a fraction of the boats. This is the leg your flight home shortens: one night on the island, one full morning on the water.</p>
           <ul class="beats">
-            <li><b>Overnight cruise</b> or day boats from an island base. Overnight buys you the empty bay at dawn; a town base buys flexibility if weather turns.</li>
-            <li><b>Kayak</b> the tunnels at Ba Trai Dao or Dark &amp; Bright Cave — the part everyone remembers.</li>
-            <li><b>Swim off the boat</b>, then Cannon Fort at sunset for the harbour panorama.</li>
-            <li><b>Deep-water soloing</b> if anyone climbs. Cat Ba is one of the best places on earth for it.</li>
+            <li><b>Sun evening — arrive 17:30, Cannon Fort for the sunset</b> if you have the energy, otherwise swim and eat. Book tomorrow's boat at reception tonight.</li>
+            <li><b>Mon 08:00–12:30 — the day boat.</b> Out into Lan Ha, <b>kayak</b> the tunnels at Ba Trai Dao or Dark &amp; Bright Cave, swim off the boat. This half day is the whole reason you came east.</li>
+            <li><b>Deep-water soloing</b> if anyone climbs — Cat Ba is one of the best places on earth for it, and it fits the same morning slot.</li>
+            <li><b>No overnight cruise this trip.</b> Boarding is around midday, which is exactly when you are still on the Trang An boat. Trade the Trang An morning for it if the bay at dawn matters more to you than the caves.</li>
           </ul>
-          <div class="move"><b>Move</b>Cat Ba to Hanoi is 3.5–4 h. If your flight on the 1st is before roughly 15:00, come back on the evening of the 31st and sleep near the Old Quarter.</div>
+          <div class="move"><b>Move · Cat Ba → Hanoi · allow 4.5 h</b>Off the boat, eat, and leave the island about 13:30. Ferry plus road puts you in the Old Quarter around 17:30–18:00 — in time for the second shopping window and an early night. This return is not optional: with an 08:45 flight there is no way to come back on the morning of the 1st.</div>
         </div>
         <div>
           <div class="sechead">Where you stay</div>
           <div class="stays">
-            <div class="stay"><div class="nm">Orchid Premium Cruise</div><div class="tag">Overnight cruise · Lan Ha</div><p>Cabin, all meals, kayaking and guide included. One night aboard plus one on the island is the usual split.</p></div>
-            <div class="stay"><div class="nm">Cat Ba Island Resort &amp; Spa</div><div class="tag">Island base · Cat Co 1</div><p>Beachfront with a pool and its own cable car down to the sand. Day boats booked from reception.</p></div>
+            <div class="stay"><div class="nm">Cat Ba Island Resort &amp; Spa</div><div class="tag">Island base · Cat Co 1 · your one night</div><p>Beachfront with a pool and its own cable car down to the sand. Day boats booked from reception the night before. With a single night on the island this is the practical choice.</p></div>
+            <div class="stay"><div class="nm">Orchid Premium Cruise</div><div class="tag">Overnight cruise · does not fit these dates</div><p>Still the best thing in the bay, but boarding is around midday Sunday and you are on the Trang An boat until 11:00. It only works if you give up Trang An entirely and drive straight from Tam Coc to the pier.</p></div>
           </div>
 
           <div class="sechead" style="margin-top:26px">Halal eats</div>
@@ -339,28 +357,140 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
 
   <article class="leg">
     <button class="leghead" aria-expanded="false" data-leg="l5">
-      <div class="leg-meta"><div class="leg-dates">1 Sep</div><div class="leg-place">Hanoi</div></div>
-      <div><div class="legtitle">Buffer, then out</div><div class="legsum">Departure day · keep it loose</div></div>
+      <div class="leg-meta"><div class="leg-dates">Mon–Tue<br>31 Aug – 1 Sep</div><div class="leg-place">Hanoi</div></div>
+      <div><div class="legtitle">Shop, sleep, fly at 08:45</div><div class="legsum">1 night · Old Quarter · the trip's hard stop</div></div>
       <div class="chev">+</div>
     </button>
     <div class="legbody" id="l5">
       <div class="legcols">
         <div>
-          <div class="sechead">The day</div>
-          <p>Whatever's left. Noi Bai airport is 45 minutes from the centre — allow 90 in traffic.</p>
+          <div class="sechead">Monday evening, then out</div>
+          <p>There is no sightseeing day at the end of this trip. An 08:45 departure means you are leaving the hotel before dawn, so Monday evening carries everything you still want to do — which is why the shopping sits here.</p>
           <ul class="beats">
-            <li><b>Museum of Ethnology</b> — genuinely good on the hill tribes you just visited.</li>
-            <li><b>Temple of Literature</b>, then <b>Dong Xuan market</b> for last-minute anything.</li>
-            <li><b>Egg coffee</b> — coffee under whipped yolk and condensed milk. It works.</li>
+            <li><b>Mon 17:30 — back in the Old Quarter.</b> Check in, shower, drop the salt.</li>
+            <li><b>Mon 18:00–22:00 — the big shopping window.</b> Uniqlo Hoan Kiem runs until 22:00 and Dong Xuan market until roughly 19:00. Details in the shopping section below.</li>
+            <li><b>Mon 21:00 — book the airport car at reception</b> for 05:15, and pack tonight. Do not leave this to the morning.</li>
+            <li><b>Mon 22:30 — sleep.</b> That is roughly six hours. It is the whole reason you came back a day early.</li>
+            <li><b>Tue 04:45 wake · 05:15 depart · 06:00 at Noi Bai · 08:45 wheels up.</b></li>
           </ul>
+          <div class="move"><b>Move · Old Quarter → Noi Bai · allow 60 min</b>It is 35 km. Empty roads at 05:15 make it 45 minutes, but book for 05:15 anyway: that lands you airside with a full two and a half hours, and international check-in at Noi Bai closes 60 minutes before departure.</div>
         </div>
         <div>
-          <div class="sechead">One decision</div>
-          <p>If your flight is before mid-afternoon, come back from Cat Ba on the evening of the 31st and add a Hanoi room for that night. It removes the only real timing risk in the whole trip.</p>
+          <div class="sechead">Why the last night is in Hanoi</div>
+          <p>Cat Ba to Hanoi is four and a half hours including a ferry, and the ferry does not run at 03:00. Staying on the island Monday night and travelling on Tuesday morning does not merely risk the flight — it misses it. The Monday return is the one immovable piece of this itinerary; everything else can slip.</p>
+
+          <div class="sechead" style="margin-top:26px">Where you stay</div>
+          <div class="stays">
+            <div class="stay"><div class="nm">Hanoi La Siesta Premium Hang Be</div><div class="tag">Boutique · Old Quarter</div><p>Book the first and last nights here together and they will store your main bags for the whole week, which means you travel the loop light. Ask for the airport car when you check in on the 31st.</p></div>
+            <div class="stay"><div class="nm">Or anywhere near Noi Bai</div><div class="tag">Hedge · airport road</div><p>If the group would rather not do a 04:45 alarm in the Old Quarter, an airport hotel cuts the morning transfer to fifteen minutes. You lose the shopping evening, so this is the wrong trade for most people.</p></div>
+          </div>
         </div>
       </div>
     </div>
   </article>
+</section>
+
+<section id="transfers">
+  <h2>Every transfer, timed</h2>
+  <p class="sub">Durations are door to door and include the faff at each end. Treat them as "allow this much", not as timetables — Vietnamese road transport runs to intention rather than schedule, and the only fixed number on this page is 08:45 on 1 September.</p>
+
+  <div class="tablewrap">
+    <table class="moves">
+      <thead>
+        <tr><th>Day</th><th>Leg</th><th>Planned</th><th>Allow</th><th>How</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day">Tue 25</td>
+          <td class="rt">Noi Bai → Old Quarter</td>
+          <td class="clock">08:30 → 09:30</td>
+          <td class="dur">1 h</td>
+          <td class="how">Taxi or Grab, 35 km. Add 30 min if you land into the morning peak.</td>
+        </tr>
+        <tr>
+          <td class="day">Tue 25 – Wed 26</td>
+          <td class="rt">Hanoi → Sapa</td>
+          <td class="clock">22:00 → 07:30</td>
+          <td class="dur">9 h</td>
+          <td class="how">Night train to Lao Cai in a soft-sleeper berth, then 1 h by road up to Sapa. The sleeper bus is 6 h and cheaper, but you arrive wrecked.</td>
+        </tr>
+        <tr>
+          <td class="day">Sat 29</td>
+          <td class="rt">Sapa → Ninh Binh</td>
+          <td class="clock">07:00 → 16:00</td>
+          <td class="dur">9 h</td>
+          <td class="how">The longest day. Limousine van to Hanoi (≈6 h), change vehicles, then 2.5 h south. Book both halves before you leave Sapa.</td>
+        </tr>
+        <tr>
+          <td class="day">Sun 30</td>
+          <td class="rt">Ninh Binh → Cat Ba</td>
+          <td class="clock">12:30 → 17:30</td>
+          <td class="dur">5 h</td>
+          <td class="how">Direct shuttle via Hai Phong including the ferry. Confirm the crossing the day before — the last boats go mid-afternoon.</td>
+        </tr>
+        <tr>
+          <td class="day">Mon 31</td>
+          <td class="rt">Cat Ba → Hanoi</td>
+          <td class="clock">13:30 → 18:00</td>
+          <td class="dur">4.5 h</td>
+          <td class="how">Ferry then road. The one transfer with no slack behind it, so take the early afternoon departure, not the late one.</td>
+        </tr>
+        <tr>
+          <td class="day">Tue 1 Sep</td>
+          <td class="rt">Old Quarter → Noi Bai</td>
+          <td class="clock">05:15 → 06:00</td>
+          <td class="dur">1 h</td>
+          <td class="how">Car booked the night before. Empty roads make it 45 min; the extra quarter hour is the cheapest insurance you will buy all week.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="hardstop">
+    <b>The hard stop.</b> Departure 08:45, so check-in closes 07:45 and you want to be at Noi Bai by 06:00. Working backwards: leave the Old Quarter 05:15, wake 04:45, be asleep by 22:30 on the 31st. Everything upstream of that is negotiable; this is not. It is also why the last night is in Hanoi rather than on Cat Ba — that ferry does not run before dawn.
+  </div>
+</section>
+
+<section id="shopping">
+  <h2>Shopping in Hanoi</h2>
+  <p class="sub">You have two windows and no third: <b>Tuesday 25th, 15:00–18:00</b> on the way in, and <b>Monday 31st, 18:00–22:00</b> on the way out. The 1st of September gives you nothing — you will be at the airport before the shutters go up. Buy on the Tuesday what you would hate to miss, and leave the bulk to Monday when your bags are already coming home.</p>
+
+  <div class="gal">
+    <article class="hcard">
+      <div class="hbody">
+        <div class="hloc">1 Ba Trieu · Hoan Kiem</div>
+        <h3>Uniqlo Hoan Kiem</h3>
+        <p>Three floors in the Hanoi Tourist Building on the lake's south-east corner, five minutes from the Old Quarter and open 10:00–22:00 daily. Vietnam is where a lot of this is cut and sewn, and the local pricing reflects it — the same AIRism and linen you would buy at home, materially cheaper. Both of your windows fall inside opening hours, and Monday night it is the only serious shop still open at 21:00.</p>
+        <div class="hmeta">10:00–22:00 daily · both windows</div>
+        <a href="https://map.uniqlo.com/vn/en/detail/12600013" target="_blank" rel="noopener">Store page →</a>
+      </div>
+    </article>
+
+    <article class="hcard">
+      <div class="hbody">
+        <div class="hloc">Hang Gai &amp; Hang Bong</div>
+        <h3>Silk Street</h3>
+        <p>Two streets of silk, tailoring and embroidery running west off the lake. Same-day alterations are routine and a shirt can be made in 24–48 hours — which only works if you order on the <b>Tuesday</b> and collect on the Monday. Bring a garment you already like the fit of. Agree the price and the collection time in writing.</p>
+        <div class="hmeta">Order Tue · collect Mon</div>
+      </div>
+    </article>
+
+    <article class="hcard">
+      <div class="hbody">
+        <div class="hloc">Northern edge of the Old Quarter</div>
+        <h3>Dong Xuan market</h3>
+        <p>Three floors of wholesale everything — clothing, fabric, luggage, household goods. Cheapest per item and the least comfortable shopping of the three; go for volume and gifts rather than anything you need to try on. Closes around 19:00, so it is an early-evening stop on the Monday or a Tuesday afternoon detour.</p>
+        <div class="hmeta">Closes ≈19:00 · bargain hard</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="notes" style="margin-top:34px">
+    <div class="note"><h3>Sizing</h3><p>Vietnamese sizing runs small by European or Gulf standards — often a full size, sometimes two. Try things on rather than trusting the label, and note that Uniqlo stocks international sizing while the markets do not.</p></div>
+    <div class="note"><h3>Bag maths</h3><p>Leave real space, or buy a cheap holdall at Dong Xuan for the way home. Check your airline's cabin allowance before Monday evening — the shopping happens roughly ten hours before you fly, which is too late to discover you are over.</p></div>
+    <div class="note"><h3>Bargaining</h3><p>Fixed prices at Uniqlo and the malls. Everywhere else, open at about half and settle near two-thirds. Walking away is a normal part of the conversation, not an insult.</p></div>
+    <div class="note"><h3>If you want a mall</h3><p>Vincom Center Pham Ngoc Thach and Trang Tien Plaza are both open late and both a short taxi from the lake. Worth it only if the Old Quarter has not produced what you wanted — the lake stores are closer to where you sleep.</p></div>
+  </div>
 </section>
 
 <section id="activities">
@@ -368,7 +498,7 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
   <p class="sub">Everything here is an addition to the day-by-day route above — the spare-afternoon options, the rain fallbacks, and the things worth booking before you land. Pick one or two per base; the itinerary is already full.</p>
 
   <div class="citygrp">
-    <div class="cityname">Hanoi <em>25 Aug &amp; 1 Sep</em></div>
+    <div class="cityname">Hanoi <em>Tue 25 &amp; Mon 31 Aug</em></div>
     <div class="gal">
       <article class="hcard">
         <img alt="Wooden puppets performing on water at the Thang Long theatre in Hanoi" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Thang_Long_Water_Puppet_Theatre2.JPG/960px-Thang_Long_Water_Puppet_Theatre2.JPG">
@@ -395,15 +525,17 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
         <div class="hbody">
           <div class="hloc">12 Hang Luoc · Hoan Kiem</div>
           <h3>Al Noor Mosque</h3>
-          <p>Built by Bombay traders in 1885 and still the only mosque in northern Vietnam. Jumu'ah runs roughly 12:30–13:30. Halal kitchens cluster around the gate — there is a halal-food board visible in this photo — so line lunch up with prayer. See the halal eats under Hanoi above.</p>
-          <div class="hmeta">Friday prayer · 12:30</div>
+          <p>Built by Bombay traders in 1885 and still the only mosque in northern Vietnam. <b>Jumu'ah does not fall on these dates</b> — the one Friday of the trip, 28 August, you are up in Sapa, where there is no mosque at all. Come for a weekday prayer and lunch instead: halal kitchens cluster around the gate, and there is a halal-food board visible in this photo.</p>
+          <div class="hmeta">Tue 25 or Mon 31 · no Friday</div>
         </div>
       </article>
     </div>
     <div class="alsohead">Also worth it</div>
     <ul class="beats">
-      <li><b>Halal cooking class</b> — market walk then a kitchen; several Old Quarter operators run halal versions on request.</li>
+      <li><b>Halal cooking class</b> — market walk then a kitchen; several Old Quarter operators run halal versions on request. Needs a half day, so it only works if you give up the Tuesday shopping window.</li>
       <li><b>Cyclo loop of the Old Quarter</b> at dusk. Agree the price before you sit down.</li>
+      <li><b>Egg coffee</b> — coffee under whipped yolk and condensed milk. Twenty minutes, and the one thing on this list you can genuinely squeeze in.</li>
+      <li><b>Museum of Ethnology</b> and the <b>Temple of Literature</b> were casualties of the 08:45 flight — both need a half day you no longer have. Trade the Tuesday shopping for the museum if hill-tribe history beats a suitcase of Uniqlo.</li>
     </ul>
   </div>
 
@@ -594,10 +726,12 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
 <section id="notes">
   <h2>Crew notes</h2>
   <div class="notes">
-    <div class="note"><h3>Booking rhythm</h3><p>Sapa bus and lodge: book now, it's peak domestic season and Topas fills months out. Ninh Binh and Cat Ba: two to three days ahead as you go, so weather can change your mind.</p></div>
+    <div class="note"><h3>Booking rhythm</h3><p>Book now: the night train berths for the 25th, the Sapa lodge, and the Hanoi room for the 31st — that last one is what protects the flight. Ninh Binh and Cat Ba can wait until two or three days ahead, so weather can still change your mind.</p></div>
+    <div class="note"><h3>The Saturday problem</h3><p>Sapa to Ninh Binh on the 29th is nine hours with a vehicle change in Hanoi, and it is the only genuinely hard day here. The swap: sleep in Hanoi that night instead and drop Ninh Binh to a day trip on the Sunday — you lose Trang An at dawn but gain a soft bed halfway through the week.</p></div>
     <div class="note"><h3>Eating halal on this route</h3><p>Hanoi is easy — certified kitchens cluster around Al Noor mosque. Sapa town has two reliable halal restaurants. Tam Coc has two Indian ones. <b>Cat Ba has neither a halal restaurant nor a mosque</b>, so brief the cruise at booking and lean on seafood and vegetarian there. Say "khong thit lon" — no pork — and expect to repeat it.</p></div>
     <div class="note"><h3>Cash</h3><p>Village homestays, guides and boat fees are frequently cash-only. Draw dong in Hanoi before heading up — ATMs in Ta Van are unreliable.</p></div>
     <div class="note"><h3>Packing that matters</h3><p>Broken-in shoes with grip; the terraces turn to clay when wet. A rain shell, not an umbrella. One warm layer for Sapa nights and Fansipan. Dry bag for the kayak day.</p></div>
+    <div class="note"><h3>What the flight times cost you</h3><p>A 07:15 arrival is generous — you get a whole extra day. An 08:45 departure is not: it deletes the last day completely and takes the second Lan Ha night with it. That is the only change forced on the original plan, and the Monday evening in Hanoi is where the shopping went.</p></div>
     <div class="note"><h3>Splitting up is fine</h3><p>Fansipan cable car versus a full trek day is the natural fork. Same for the Hang Mua steps. Set a meet-back time and let people choose.</p></div>
     <div class="note"><h3>Guides</h3><p>In Sapa, hire from the village. In Ninh Binh and Lan Ha you don't need one — boats come with rowers, everything else is self-directed.</p></div>
     <div class="note"><h3>The swap</h3><p>If the group wants the bigger payoff and doesn't mind rough roads, trade Sapa for the <b>Ha Giang Loop</b> — 3–4 days, better scenery, far fewer people. Same time cost, but it leaves no room for Ninh Binh.</p></div>
@@ -649,7 +783,7 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
   });
 
   var links = Array.prototype.slice.call(document.querySelectorAll('.navin a'));
-  var sections = ['route','activities','hotels','notes','weather']
+  var sections = ['route','transfers','shopping','activities','hotels','notes','weather']
     .map(function(id){ return document.getElementById(id); }).filter(Boolean);
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
