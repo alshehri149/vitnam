@@ -104,6 +104,21 @@ ul.beats li:before{content:"";position:absolute;left:0;top:17px;width:9px;height
   text-decoration:none;margin-top:10px;border-bottom:1px solid rgba(184,84,47,.4);align-self:flex-start}
 .hcard a:hover{border-bottom-color:var(--clay)}
 
+/* activities by city */
+.citygrp{margin-bottom:48px}
+.citygrp:last-child{margin-bottom:0}
+.cityname{font-family:'Bebas Neue',sans-serif;font-size:30px;font-weight:400;letter-spacing:.02em;line-height:1;
+  padding-bottom:10px;margin-bottom:22px;border-bottom:1px solid var(--line2);
+  display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.cityname em{font-family:'IBM Plex Mono',monospace;font-size:11px;font-style:normal;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--mist)}
+.alsohead{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mist);margin:24px 0 2px}
+.credits{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;line-height:1.85;
+  color:var(--mist);letter-spacing:.02em}
+.credits a{color:var(--mist);text-decoration:underline;text-underline-offset:2px}
+.credits a:hover{color:var(--clay)}
+
 /* notes + weather */
 .notes{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
 .note{padding:22px 0;border-top:1px solid var(--line)}
@@ -253,7 +268,7 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
       <div class="chev">+</div>
     </button>
     <div class="legbody" id="l3">
-      <img class="shot" alt="Rowing boats between karst peaks at Trang An, Ninh Binh" loading="lazy" src="https://images.unsplash.com/photo-1509923936880-0ea1c1d78b7e?w=1400&q=72&auto=format&fit=crop">
+      <img class="shot" alt="Rowing boats between karst peaks at Trang An, Ninh Binh" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Trang_An_Landscape_Complex%2C_Ninh_Binh_Province%2C_Vietnam%2C_20240202_1456_5313.jpg/1280px-Trang_An_Landscape_Complex%2C_Ninh_Binh_Province%2C_Vietnam%2C_20240202_1456_5313.jpg">
       <div class="legcols">
         <div>
           <div class="sechead">The day</div>
@@ -352,50 +367,155 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
   <h2>Activities by base</h2>
   <p class="sub">Everything here is an addition to the day-by-day route above — the spare-afternoon options, the rain fallbacks, and the things worth booking before you land. Pick one or two per base; the itinerary is already full.</p>
 
-  <div class="notes">
-    <div class="note">
-      <h3>Hanoi</h3>
-      <ul class="beats">
-        <li><b>Thang Long water puppets</b> — 45 minutes, on the lake, genuinely worth it. Book same-day at the box office.</li>
-        <li><b>Hoa Lo Prison Memorial</b> — the heaviest and best-curated museum in the city.</li>
-        <li><b>Halal cooking class</b> — market walk then a kitchen; several Old Quarter operators run halal versions on request.</li>
-        <li><b>Friday prayer at Al Noor mosque</b>, 12 Hang Luoc — built by Bombay traders in 1885 and still the only mosque in northern Vietnam. Jumu'ah runs roughly 12:30–13:30; Zaynab is at the door for lunch after.</li>
-        <li><b>Cyclo loop of the Old Quarter</b> at dusk. Agree the price before you sit down.</li>
-      </ul>
-    </div>
+  <div class="citygrp">
+    <div class="cityname">Hanoi <em>25 Aug &amp; 1 Sep</em></div>
+    <div class="gal">
+      <article class="hcard">
+        <img alt="Wooden puppets performing on water at the Thang Long theatre in Hanoi" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Thang_Long_Water_Puppet_Theatre2.JPG/960px-Thang_Long_Water_Puppet_Theatre2.JPG">
+        <div class="hbody">
+          <div class="hloc">Old Quarter · Hoan Kiem</div>
+          <h3>Thang Long water puppets</h3>
+          <p>An eleventh-century village art performed in a waist-deep pool, puppeteers hidden behind a screen. Forty-five minutes, live musicians, no language needed. Book same-day at the box office by the lake.</p>
+          <div class="hmeta">45 min · several shows daily</div>
+        </div>
+      </article>
 
-    <div class="note">
-      <h3>Sapa</h3>
-      <ul class="beats">
-        <li><b>Red Dao herbal bath</b> — a wooden tub of mountain herbs after a trek day. Topas and most valley homestays run them.</li>
-        <li><b>Cat Cat village</b> — short, easy, touristy, and fine for a half day when legs are tired.</li>
-        <li><b>Tram Ton pass by motorbike</b> — the highest road pass in Vietnam, and the best hour of riding here.</li>
-        <li><b>Silver and Love waterfalls</b>, on the same road out to the pass.</li>
-        <li><b>Sapa night market</b> for textiles. Bargain hard; start at half.</li>
-      </ul>
-    </div>
+      <article class="hcard">
+        <img alt="The yellow Maison Centrale entrance of Hoa Lo Prison Museum" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Hoa_Lo_Prison_Museum%2C_Hanoi_%282%29_%2824624166618%29.jpg/960px-Hoa_Lo_Prison_Museum%2C_Hanoi_%282%29_%2824624166618%29.jpg">
+        <div class="hbody">
+          <div class="hloc">French Quarter · Hoa Lo street</div>
+          <h3>Hoa Lo Prison Memorial</h3>
+          <p>French colonial prison, later the "Hanoi Hilton". The heaviest and best-curated museum in the city, and the one that puts the rest of the trip in context. Allow 90 minutes.</p>
+          <div class="hmeta">Indoors · good rain fallback</div>
+        </div>
+      </article>
 
-    <div class="note">
-      <h3>Ninh Binh</h3>
-      <ul class="beats">
-        <li><b>Hoa Lu ancient capital</b> — tenth-century seat of power, twenty minutes from Tam Coc.</li>
-        <li><b>Bai Dinh pagoda</b> — the largest temple complex in Southeast Asia. Vast, modern, and best early.</li>
-        <li><b>Thung Nham bird garden</b> — thousands of storks and egrets coming in at dusk.</li>
-        <li><b>Am Tien cave</b> — an emerald pool inside a ring of cliffs, quiet compared with everything else here.</li>
-        <li><b>Sunrise at Hang Mua</b> as an alternative to the late-afternoon climb — same steps, no crowd, cooler.</li>
-      </ul>
+      <article class="hcard">
+        <img alt="The white gateway of Al-Noor Mosque on Hang Luoc street, Hanoi" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Pordego_de_moskeo_Al-Noor_01.jpg/960px-Pordego_de_moskeo_Al-Noor_01.jpg">
+        <div class="hbody">
+          <div class="hloc">12 Hang Luoc · Hoan Kiem</div>
+          <h3>Al Noor Mosque</h3>
+          <p>Built by Bombay traders in 1885 and still the only mosque in northern Vietnam. Jumu'ah runs roughly 12:30–13:30. Zaynab is at the gate for lunch after — you can see the halal sign in this photo.</p>
+          <div class="hmeta">Friday prayer · 12:30</div>
+        </div>
+      </article>
     </div>
+    <div class="alsohead">Also worth it</div>
+    <ul class="beats">
+      <li><b>Halal cooking class</b> — market walk then a kitchen; several Old Quarter operators run halal versions on request.</li>
+      <li><b>Cyclo loop of the Old Quarter</b> at dusk. Agree the price before you sit down.</li>
+    </ul>
+  </div>
 
-    <div class="note">
-      <h3>Lan Ha &amp; Cat Ba</h3>
-      <ul class="beats">
-        <li><b>Cat Ba National Park</b> — the Ngu Lam peak trail, about 90 minutes up through jungle for the island panorama.</li>
-        <li><b>Viet Hai village by bike</b> — boat in, cycle the valley, boat back. The best half day on the island.</li>
-        <li><b>Monkey Island</b> for the beach and the short scramble to the ridge. Guard your bags; the monkeys are thieves.</li>
-        <li><b>Night squid fishing</b> from the harbour — cheap, slow and good with a group.</li>
-        <li><b>Floating pearl farm visit</b>, usually bundled into the cruise itinerary.</li>
-      </ul>
+  <div class="citygrp">
+    <div class="cityname">Sapa <em>26–28 Aug</em></div>
+    <div class="gal">
+      <article class="hcard">
+        <img alt="Cat Cat waterfall tumbling over rocks near Sapa" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Cat_Cat_waterfall.jpg/960px-Cat_Cat_waterfall.jpg">
+        <div class="hbody">
+          <div class="hloc">3 km below Sapa town</div>
+          <h3>Cat Cat village</h3>
+          <p>A H'mong village turned walking loop, ending at this waterfall and the old French hydro station. Short, easy and frankly touristy — which is exactly what you want on the day after a long trek.</p>
+          <div class="hmeta">Half day · easy legs</div>
+        </div>
+      </article>
+
+      <article class="hcard">
+        <img alt="Silver Waterfall falling beside a footbridge on the Tram Ton road" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Thacbac3.jpg/960px-Thacbac3.jpg">
+        <div class="hbody">
+          <div class="hloc">Tram Ton road · 12 km from town</div>
+          <h3>Silver Waterfall — Thac Bac</h3>
+          <p>A 200-metre drop right beside the road out to the pass, at its heaviest in late August. Pair it with Love Waterfall and the Tram Ton pass ride and you have a full, spectacular half day on two wheels.</p>
+          <div class="hmeta">30 min stop · on the pass road</div>
+        </div>
+      </article>
     </div>
+    <div class="alsohead">Also worth it</div>
+    <ul class="beats">
+      <li><b>Red Dao herbal bath</b> — a wooden tub of mountain herbs after a trek day. Topas and most valley homestays run them.</li>
+      <li><b>Tram Ton pass by motorbike</b> — the highest road pass in Vietnam, and the best hour of riding here.</li>
+      <li><b>Sapa night market</b> for textiles. Bargain hard; start at half.</li>
+    </ul>
+  </div>
+
+  <div class="citygrp">
+    <div class="cityname">Ninh Binh <em>29 Aug</em></div>
+    <div class="gal">
+      <article class="hcard">
+        <img alt="Temple buildings at the ancient capital of Hoa Lu" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Ancient_capital_of_Hoa_Lu%2C_10th_century_%281%29_%2838445751276%29.jpg/960px-Ancient_capital_of_Hoa_Lu%2C_10th_century_%281%29_%2838445751276%29.jpg">
+        <div class="hbody">
+          <div class="hloc">20 minutes from Tam Coc</div>
+          <h3>Hoa Lu ancient capital</h3>
+          <p>Vietnam's seat of power in the tenth century, before the court moved to Hanoi. Two temples to the founding emperors sit in a bowl of limestone — small, quiet, and easy to fold into the morning.</p>
+          <div class="hmeta">1 hour · pairs with Trang An</div>
+        </div>
+      </article>
+
+      <article class="hcard">
+        <img alt="Tiered pagoda roofs at the Bai Dinh temple complex" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Chua_Bai_Dinh_X18.JPG/960px-Chua_Bai_Dinh_X18.JPG">
+        <div class="hbody">
+          <div class="hloc">Gia Vien · 30 min from Tam Coc</div>
+          <h3>Bai Dinh pagoda</h3>
+          <p>The largest temple complex in Southeast Asia, and almost entirely modern — vast corridors of arhat statues and a 100-metre bell tower. Go early; there is no shade and electric buggies queue by ten.</p>
+          <div class="hmeta">Half day · go at opening</div>
+        </div>
+      </article>
+
+      <article class="hcard">
+        <img alt="View over Tam Coc from the top of the Hang Mua steps" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Hang_Mua_2.jpg/960px-Hang_Mua_2.jpg">
+        <div class="hbody">
+          <div class="hloc">Tam Coc · 500 steps</div>
+          <h3>Hang Mua at sunrise</h3>
+          <p>The same climb the itinerary puts in late afternoon, done at dawn instead: no crowd, no heat, and the river valley under mist. If anyone in the group is a photographer, this is their morning.</p>
+          <div class="hmeta">Alternative to the afternoon climb</div>
+        </div>
+      </article>
+    </div>
+    <div class="alsohead">Also worth it</div>
+    <ul class="beats">
+      <li><b>Thung Nham bird garden</b> — thousands of storks and egrets coming in at dusk.</li>
+      <li><b>Am Tien cave</b> — an emerald pool inside a ring of cliffs, quiet compared with everything else here.</li>
+    </ul>
+  </div>
+
+  <div class="citygrp">
+    <div class="cityname">Lan Ha &amp; Cat Ba <em>30–31 Aug</em></div>
+    <div class="gal">
+      <article class="hcard">
+        <img alt="Dense jungle canopy and limestone hills in Cat Ba National Park" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cat_Ba_National_Park_267.JPG/960px-Cat_Ba_National_Park_267.JPG">
+        <div class="hbody">
+          <div class="hloc">Ngu Lam peak trail</div>
+          <h3>Cat Ba National Park</h3>
+          <p>About 90 minutes up through jungle to a lookout tower over the whole island. Steep, humid and genuinely slippery after rain — proper shoes, and go in the morning before the heat sets in.</p>
+          <div class="hmeta">3 h round trip · start early</div>
+        </div>
+      </article>
+
+      <article class="hcard">
+        <img alt="Quiet road through the valley leading to Viet Hai village on Cat Ba" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Road_to_Vi%E1%BB%87t_H%E1%BA%A3i%2C_C%C3%A1t_B%C3%A0_Island%2C_Vietnam%2C_20240131_1323_4619.jpg/960px-Road_to_Vi%E1%BB%87t_H%E1%BA%A3i%2C_C%C3%A1t_B%C3%A0_Island%2C_Vietnam%2C_20240131_1323_4619.jpg">
+        <div class="hbody">
+          <div class="hloc">Inside the national park</div>
+          <h3>Viet Hai village by bike</h3>
+          <p>Boat in across the bay, hire a bike at the jetty, roll through the valley to a village that had no road until recently, then boat back. The best half day on the island and the flattest riding you will find.</p>
+          <div class="hmeta">Half day · boat plus bike</div>
+        </div>
+      </article>
+
+      <article class="hcard">
+        <img alt="Macaques on the rocks at Monkey Island near Cat Ba" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Monkeys_on_Monkey_Island%2C_Cat_Ba.jpg/960px-Monkeys_on_Monkey_Island%2C_Cat_Ba.jpg">
+        <div class="hbody">
+          <div class="hloc">Cat Dua · 10 min by boat</div>
+          <h3>Monkey Island</h3>
+          <p>A beach, a short sharp scramble to the ridge, and a resident troop of macaques. Guard your bags and do not hand them food — they are practised thieves and they bite. Most day boats stop here anyway.</p>
+          <div class="hmeta">1–2 h · usually on the boat route</div>
+        </div>
+      </article>
+    </div>
+    <div class="alsohead">Also worth it</div>
+    <ul class="beats">
+      <li><b>Night squid fishing</b> from the harbour — cheap, slow and good with a group.</li>
+      <li><b>Floating pearl farm visit</b>, usually bundled into the cruise itinerary.</li>
+    </ul>
   </div>
 </section>
 
@@ -496,6 +616,23 @@ footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;
 <footer>
   Northern Vietnam · 25 Aug – 1 Sep · 7 nights · no domestic flights<br>
   Planning document. Confirm availability directly with each property.
+
+  <div class="credits">
+    <b>Photographs.</b> Activity and Trang An photographs are of the actual places, via Wikimedia Commons —
+    <a href="https://commons.wikimedia.org/wiki/File:Thang_Long_Water_Puppet_Theatre2.JPG" target="_blank" rel="noopener">water puppets</a> © Gryffindor (CC BY-SA 3.0) ·
+    <a href="https://commons.wikimedia.org/wiki/File:Hoa_Lo_Prison_Museum,_Hanoi_(2)_(24624166618).jpg" target="_blank" rel="noopener">Hoa Lo</a> © Richard Mortel (CC BY 2.0) ·
+    <a href="https://commons.wikimedia.org/wiki/File:Pordego_de_moskeo_Al-Noor_01.jpg" target="_blank" rel="noopener">Al Noor Mosque</a> © RG72 (CC BY-SA 3.0) ·
+    <a href="https://commons.wikimedia.org/wiki/File:Cat_Cat_waterfall.jpg" target="_blank" rel="noopener">Cat Cat</a> © KS Chew (CC BY 2.0) ·
+    <a href="https://commons.wikimedia.org/wiki/File:Thacbac3.jpg" target="_blank" rel="noopener">Thac Bac</a> © Lori_NY (CC BY-SA 2.0) ·
+    <a href="https://commons.wikimedia.org/wiki/File:Ancient_capital_of_Hoa_Lu,_10th_century_(1)_(38445751276).jpg" target="_blank" rel="noopener">Hoa Lu</a> © Richard Mortel (CC BY 2.0) ·
+    <a href="https://commons.wikimedia.org/wiki/File:Chua_Bai_Dinh_X18.JPG" target="_blank" rel="noopener">Bai Dinh</a> © Kien1980v (public domain) ·
+    <a href="https://commons.wikimedia.org/wiki/File:Hang_Mua_2.jpg" target="_blank" rel="noopener">Hang Mua</a> © Shyamal (CC BY-SA 4.0) ·
+    <a href="https://commons.wikimedia.org/wiki/File:Cat_Ba_National_Park_267.JPG" target="_blank" rel="noopener">Cat Ba National Park</a> © Schwede66 (CC BY-SA 3.0) ·
+    <a href="https://commons.wikimedia.org/wiki/File:Road_to_Vi%E1%BB%87t_H%E1%BA%A3i,_C%C3%A1t_B%C3%A0_Island,_Vietnam,_20240131_1323_4619.jpg" target="_blank" rel="noopener">Viet Hai</a> and
+    <a href="https://commons.wikimedia.org/wiki/File:Trang_An_Landscape_Complex,_Ninh_Binh_Province,_Vietnam,_20240202_1456_5313.jpg" target="_blank" rel="noopener">Trang An</a> © Jakub Hałun (CC BY 4.0) ·
+    <a href="https://commons.wikimedia.org/wiki/File:Monkeys_on_Monkey_Island,_Cat_Ba.jpg" target="_blank" rel="noopener">Monkey Island</a> © TomFitzhenry (CC BY-SA 4.0).
+    Hotel and landscape headers are indicative stock imagery, not photographs of the named properties.
+  </div>
 </footer>
 
 </div>
