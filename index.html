@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>North Vietnam · 25 August – 1 September</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12211c;
+  --paper:#e8e4d6;
+  --card:#f2efe4;
+  --terrace:#4a6b4a;
+  --clay:#b8542f;
+  --mist:#9aa89f;
+  --line:rgba(18,33,28,.16);
+  --line2:rgba(18,33,28,.32);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'IBM Plex Sans',system-ui,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(232,228,214,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.navin{max-width:1000px;margin:0 auto;padding:11px 24px;display:flex;gap:6px;align-items:center;overflow-x:auto;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.navin a{color:var(--ink);text-decoration:none;padding:5px 9px;border:1px solid transparent;white-space:nowrap;border-radius:2px}
+.navin a:hover,.navin a.on{border-color:var(--line2);color:var(--clay)}
+.navin .brand{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.05em;margin-right:14px;white-space:nowrap}
+
+/* hero */
+.hero{padding:64px 0 0;border-bottom:2px solid var(--ink)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:18px}
+h1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(52px,12vw,124px);line-height:.86;margin-bottom:18px}
+h1 span{color:var(--clay)}
+.standfirst{max-width:54ch;font-size:19px;color:#2b3d35;margin-bottom:36px}
+.profile{width:100%;height:170px}
+.profile-key{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--mist);padding:10px 0 22px;border-top:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.fact{padding:24px 18px 24px 0}
+.fact dt{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);margin-bottom:5px}
+.fact dd{font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1}
+
+section{padding:60px 0;border-bottom:1px solid var(--line)}
+h2{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:.02em;margin-bottom:10px}
+.sub{color:#4b5f56;max-width:62ch;margin-bottom:32px}
+
+/* legs */
+.leg{border-top:1px solid var(--line)}
+.leg:first-of-type{border-top:2px solid var(--ink)}
+.leghead{width:100%;background:none;border:0;cursor:pointer;text-align:left;font:inherit;color:inherit;
+  display:grid;grid-template-columns:124px 1fr auto;gap:26px;align-items:center;padding:26px 0}
+.leghead:hover .legtitle{color:var(--clay)}
+.leg-dates{font-family:'Bebas Neue',sans-serif;font-size:32px;line-height:.95}
+.leg-place{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin-top:4px}
+.legtitle{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.02em;transition:color .15s}
+.legsum{font-size:14px;color:#5a6d64;margin-top:2px}
+.chev{font-family:'IBM Plex Mono',monospace;font-size:20px;color:var(--mist);transition:transform .25s}
+.leghead[aria-expanded="true"] .chev{transform:rotate(45deg)}
+.legbody{display:none;padding-bottom:36px}
+.legbody.open{display:block}
+.shot{width:100%;height:280px;object-fit:cover;margin-bottom:24px;background:#d8d4c6}
+.legcols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.sechead{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);margin-bottom:12px}
+ul.beats{list-style:none}
+ul.beats li{padding:9px 0 9px 22px;position:relative;border-top:1px solid var(--line);font-size:16px}
+ul.beats li:before{content:"";position:absolute;left:0;top:17px;width:9px;height:1px;background:var(--clay)}
+.move{margin-top:20px;padding:12px 16px;background:rgba(74,107,74,.1);border-left:2px solid var(--terrace);
+  font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.5}
+.move b{letter-spacing:.1em;text-transform:uppercase;font-size:11px;color:var(--terrace);display:block;margin-bottom:3px}
+
+/* stay strip inside a leg */
+.stays{display:grid;gap:10px}
+.stay{border:1px solid var(--line);background:var(--card);padding:14px 15px;border-radius:2px}
+.stay .nm{font-weight:600;font-size:16px}
+.stay .tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);margin-top:3px}
+.stay p{font-size:14px;color:#4b5f56;margin-top:7px;line-height:1.5}
+.stay a{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--clay);text-decoration:none;border-bottom:1px solid rgba(184,84,47,.4);margin-top:9px;display:inline-block}
+.stay a:hover{border-bottom-color:var(--clay)}
+
+/* hotel gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hcard{background:var(--card);border:1px solid var(--line);border-radius:2px;overflow:hidden;display:flex;flex-direction:column;
+  transition:border-color .18s,transform .18s}
+.hcard:hover{border-color:var(--line2);transform:translateY(-3px)}
+.hcard img{width:100%;height:190px;object-fit:cover;background:#d8d4c6}
+.hbody{padding:16px 17px 18px;display:flex;flex-direction:column;flex:1}
+.hloc{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);margin-bottom:6px}
+.hcard h3{font-family:'Bebas Neue',sans-serif;font-size:24px;font-weight:400;letter-spacing:.02em;line-height:1.05;margin-bottom:8px}
+.hcard p{font-size:14.5px;color:#41544a;line-height:1.55;flex:1}
+.hmeta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mist);letter-spacing:.06em;margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
+.hcard a{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);
+  text-decoration:none;margin-top:10px;border-bottom:1px solid rgba(184,84,47,.4);align-self:flex-start}
+.hcard a:hover{border-bottom-color:var(--clay)}
+
+/* notes + weather */
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.note{padding:22px 0;border-top:1px solid var(--line)}
+.note h3{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin-bottom:8px;font-weight:500}
+.note p{font-size:15px;line-height:1.55}
+.warn{background:var(--ink);color:var(--paper);padding:32px;border-radius:2px}
+.warn h2{color:var(--paper);margin-bottom:14px}
+.warn p{max-width:64ch;font-size:16px}
+.warn p+p{margin-top:14px}
+.warn b{color:#e8a87c}
+footer{padding:44px 0 64px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mist);letter-spacing:.08em;line-height:1.8}
+
+@media (max-width:820px){ .gal{grid-template-columns:1fr 1fr} }
+@media (max-width:640px){
+  .facts{grid-template-columns:1fr 1fr}
+  .leghead{grid-template-columns:1fr auto;gap:12px}
+  .leg-meta{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .leg-meta .leg-place{margin-top:0}
+  .legcols,.notes,.gal{grid-template-columns:1fr;gap:26px}
+  .shot{height:210px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navin">
+    <span class="brand">North Vietnam</span>
+    <a href="#route">Route</a>
+    <a href="#hotels">Hotels</a>
+    <a href="#notes">Notes</a>
+    <a href="#weather">Weather</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">25 August — 1 September · Hanoi in, Hanoi out · 7 nights</div>
+  <h1>Terraces,<br>Karst &amp;<br><span>Saltwater</span></h1>
+  <p class="standfirst">Seven days across the north for a small group. No domestic flights, no Da Nang detour — one loop that climbs to 1,600 m, drops to the rice flats, then finishes on the water.</p>
+
+  <svg class="profile" viewBox="0 0 900 170" preserveAspectRatio="none" role="img" aria-label="Elevation profile: Hanoi near sea level, climbing to Sapa at 1600 metres, descending through Ninh Binh to Lan Ha Bay at sea level">
+    <line x1="0" y1="144" x2="900" y2="144" stroke="rgba(18,33,28,.2)"/>
+    <path d="M0,134 L120,128 L200,32 L340,26 L420,36 L560,124 L640,120 L720,140 L900,142" fill="none" stroke="#4a6b4a" stroke-width="2.5"/>
+    <path d="M0,134 L120,128 L200,32 L340,26 L420,36 L560,124 L640,120 L720,140 L900,142 L900,170 L0,170 Z" fill="rgba(74,107,74,.13)"/>
+    <circle cx="60" cy="131" r="4" fill="#b8542f"/><circle cx="270" cy="26" r="4" fill="#b8542f"/>
+    <circle cx="600" cy="122" r="4" fill="#b8542f"/><circle cx="800" cy="141" r="4" fill="#b8542f"/>
+  </svg>
+  <div class="profile-key"><span>Hanoi · 16 m</span><span>Sapa · 1 600 m</span><span>Ninh Binh · 10 m</span><span>Lan Ha · sea</span></div>
+
+  <dl class="facts">
+    <div class="fact"><dt>Nights</dt><dd>7</dd></div>
+    <div class="fact"><dt>Bases</dt><dd>4</dd></div>
+    <div class="fact"><dt>Flights</dt><dd>0</dd></div>
+    <div class="fact"><dt>Longest leg</dt><dd>5.5 h</dd></div>
+  </dl>
+</header>
+
+<section id="route">
+  <h2>The route</h2>
+  <p class="sub">Tap any leg to open it. Sapa is the anchor and costs six hours each way, so it goes early — a closed mountain road on day two is an inconvenience, on day seven it's a missed flight.</p>
+
+  <article class="leg">
+    <button class="leghead" aria-expanded="true" data-leg="l1">
+      <div class="leg-meta"><div class="leg-dates">25 Aug</div><div class="leg-place">Hanoi</div></div>
+      <div><div class="legtitle">Land, eat, get on a bus</div><div class="legsum">1 night · Old Quarter · arrival day</div></div>
+      <div class="chev">+</div>
+    </button>
+    <div class="legbody open" id="l1">
+      <img class="shot" alt="Street life in the Hanoi Old Quarter" loading="lazy" src="https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=1400&q=72&auto=format&fit=crop">
+      <div class="legcols">
+        <div>
+          <div class="sechead">The day</div>
+          <p>Do nothing ambitious. Drop bags, get a SIM at the airport, let the day be about food and jet lag.</p>
+          <ul class="beats">
+            <li><b>Hoan Kiem Lake</b> — a slow lap on foot to reset your body clock.</li>
+            <li><b>Bun cha for lunch.</b> Grilled pork in fish-sauce broth. Any place with plastic stools and a queue.</li>
+            <li><b>Ta Hien street</b> — the beer corner. Bia hoi poured cheap, drunk on the kerb.</li>
+            <li><b>Train Street</b> if timing lines up. Check the day's schedule locally, it shifts.</li>
+          </ul>
+          <div class="move"><b>Move</b>Night transfer to Sapa, 21:00–22:00 departure. Sleeper bus ≈6 h door to door. The train runs to Lao Cai and needs a 1 h transfer up the hill — more comfortable, more faff.</div>
+        </div>
+        <div>
+          <div class="sechead">Where you stay</div>
+          <div class="stays">
+            <div class="stay"><div class="nm">Hanoi La Siesta Premium Hang Be</div><div class="tag">Boutique · Old Quarter</div><p>The Old Quarter standard-bearer. Rooftop bar, walkable to everything, and a front desk that actually sorts your onward transfers.</p></div>
+            <div class="stay"><div class="nm">Capella Hanoi</div><div class="tag">Landmark · French Quarter</div><p>For one properly extravagant night. Twenty minutes from the Old Quarter chaos, which is the point.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="leg">
+    <button class="leghead" aria-expanded="false" data-leg="l2">
+      <div class="leg-meta"><div class="leg-dates">26–28 Aug</div><div class="leg-place">Sapa</div></div>
+      <div><div class="legtitle">Base in the valley, not the town</div><div class="legsum">3 nights · Muong Hoa · trekking</div></div>
+      <div class="chev">+</div>
+    </button>
+    <div class="legbody" id="l2">
+      <img class="shot" alt="Terraced rice fields in the Muong Hoa valley near Sapa" loading="lazy" src="https://images.unsplash.com/photo-1528127269322-539801943592?w=1400&q=72&auto=format&fit=crop">
+      <div class="legcols">
+        <div>
+          <div class="sechead">The days</div>
+          <p>Sapa town is a construction site with a view. Stay out in the valley instead — a fraction of the noise, and you wake up inside the landscape. Late August is peak green, right before the September gold.</p>
+          <ul class="beats">
+            <li><b>Day 1 — Lao Chai to Ta Van trek.</b> 5–6 h, moderate, terraces and river crossings. Hire a H'mong guide from the village, not a town agency.</li>
+            <li><b>Day 2 — Fansipan.</b> Cable car, 30 min to the 3,143 m summit. Go early; cloud closes in by mid-morning.</li>
+            <li><b>Day 3 — Muong Hoa valley</b> by motorbike, or the harder trek to Y Linh Ho and Giang Ta Chai.</li>
+            <li><b>Bac Ha market</b> if you can hit a Sunday — the region's best, 2.5 h away.</li>
+          </ul>
+          <div class="move"><b>Move</b>Afternoon or evening bus back to Hanoi on the 28th. Take the afternoon one if you can — you'll want a full night before Ninh Binh.</div>
+        </div>
+        <div>
+          <div class="sechead">Where you stay</div>
+          <div class="stays">
+            <div class="stay"><div class="nm">Topas Ecolodge</div><div class="tag">Design · Hoang Lien National Park</div><p>Granite bungalows on a conical hilltop, two heated infinity pools over the valley. The headline stay of the whole trip.</p></div>
+            <div class="stay"><div class="nm">Ta Van village homestay</div><div class="tag">Homestay · Muong Hoa valley</div><p>Family-run stilt houses right in the terraces. Meals included, guides arranged on the spot. The most direct version of this trip.</p></div>
+            <div class="stay"><div class="nm">Hotel de la Coupole — MGallery</div><div class="tag">Comfort · Sapa town</div><p>In town beside the cable car station. Heated pool and spa for wet afternoons — the hedge if weather turns.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="leg">
+    <button class="leghead" aria-expanded="false" data-leg="l3">
+      <div class="leg-meta"><div class="leg-dates">29 Aug</div><div class="leg-place">Ninh Binh</div></div>
+      <div><div class="legtitle">Limestone on flat water</div><div class="legsum">1 night · Tam Coc · boats and steps</div></div>
+      <div class="chev">+</div>
+    </button>
+    <div class="legbody" id="l3">
+      <img class="shot" alt="Rowing boats between karst peaks at Trang An, Ninh Binh" loading="lazy" src="https://images.unsplash.com/photo-1509923936880-0ea1c1d78b7e?w=1400&q=72&auto=format&fit=crop">
+      <div class="legcols">
+        <div>
+          <div class="sechead">The day</div>
+          <p>Two and a half hours south of Hanoi. Same karst geology as Ha Long, rising out of rice fields instead of sea — which is why they call it the inland bay.</p>
+          <ul class="beats">
+            <li><b>Trang An boat tour</b> — 3 h, rowed through flooded caves. Better than Tam Coc: longer, quieter, and the rowers use their feet.</li>
+            <li><b>Hang Mua</b> — around 500 steps to a dragon on a limestone spur. Late afternoon, and the view down over Tam Coc is the shot everyone comes for.</li>
+            <li><b>Bike the back roads</b> near Bich Dong pagoda. Flat, quiet, an hour or two.</li>
+            <li><b>Goat</b> is the local dish — <i>de nui</i>, grilled or with lemongrass.</li>
+          </ul>
+          <div class="move"><b>Move</b>Ninh Binh to Cat Ba, roughly 4–5 h via Hai Phong including the ferry. Direct shuttles run daily; book the day before.</div>
+        </div>
+        <div>
+          <div class="sechead">Where you stay</div>
+          <div class="stays">
+            <div class="stay"><div class="nm">Tam Coc Garden Resort</div><div class="tag">Boutique · Hai Nham village</div><p>Restored village houses among the karsts. Bikes included, dinner in the garden, and quiet in a way the town isn't.</p></div>
+            <div class="stay"><div class="nm">An's Eco Garden Resort</div><div class="tag">Relaxed · Tam Coc</div><p>Pool, bungalows, five minutes from the boat pier and the Hang Mua steps. Straightforward and well run.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="leg">
+    <button class="leghead" aria-expanded="false" data-leg="l4">
+      <div class="leg-meta"><div class="leg-dates">30–31 Aug</div><div class="leg-place">Lan Ha Bay</div></div>
+      <div><div class="legtitle">The bay, minus the fleet</div><div class="legsum">2 nights · Cat Ba · kayaks and swimming</div></div>
+      <div class="chev">+</div>
+    </button>
+    <div class="legbody" id="l4">
+      <img class="shot" alt="Limestone islands rising from the water in Lan Ha Bay" loading="lazy" src="https://images.unsplash.com/photo-1573270689103-d7a4e42b609a?w=1400&q=72&auto=format&fit=crop">
+      <div class="legcols">
+        <div>
+          <div class="sechead">The days</div>
+          <p>Lan Ha is the southern lobe of the same drowned karst system as Ha Long, reached from Cat Ba. Same rock towers, a fraction of the boats.</p>
+          <ul class="beats">
+            <li><b>Overnight cruise</b> or day boats from an island base. Overnight buys you the empty bay at dawn; a town base buys flexibility if weather turns.</li>
+            <li><b>Kayak</b> the tunnels at Ba Trai Dao or Dark &amp; Bright Cave — the part everyone remembers.</li>
+            <li><b>Swim off the boat</b>, then Cannon Fort at sunset for the harbour panorama.</li>
+            <li><b>Deep-water soloing</b> if anyone climbs. Cat Ba is one of the best places on earth for it.</li>
+          </ul>
+          <div class="move"><b>Move</b>Cat Ba to Hanoi is 3.5–4 h. If your flight on the 1st is before roughly 15:00, come back on the evening of the 31st and sleep near the Old Quarter.</div>
+        </div>
+        <div>
+          <div class="sechead">Where you stay</div>
+          <div class="stays">
+            <div class="stay"><div class="nm">Orchid Premium Cruise</div><div class="tag">Overnight cruise · Lan Ha</div><p>Cabin, all meals, kayaking and guide included. One night aboard plus one on the island is the usual split.</p></div>
+            <div class="stay"><div class="nm">Cat Ba Island Resort &amp; Spa</div><div class="tag">Island base · Cat Co 1</div><p>Beachfront with a pool and its own cable car down to the sand. Day boats booked from reception.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="leg">
+    <button class="leghead" aria-expanded="false" data-leg="l5">
+      <div class="leg-meta"><div class="leg-dates">1 Sep</div><div class="leg-place">Hanoi</div></div>
+      <div><div class="legtitle">Buffer, then out</div><div class="legsum">Departure day · keep it loose</div></div>
+      <div class="chev">+</div>
+    </button>
+    <div class="legbody" id="l5">
+      <div class="legcols">
+        <div>
+          <div class="sechead">The day</div>
+          <p>Whatever's left. Noi Bai airport is 45 minutes from the centre — allow 90 in traffic.</p>
+          <ul class="beats">
+            <li><b>Museum of Ethnology</b> — genuinely good on the hill tribes you just visited.</li>
+            <li><b>Temple of Literature</b>, then <b>Dong Xuan market</b> for last-minute anything.</li>
+            <li><b>Egg coffee</b> — coffee under whipped yolk and condensed milk. It works.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="sechead">One decision</div>
+          <p>If your flight is before mid-afternoon, come back from Cat Ba on the evening of the 31st and add a Hanoi room for that night. It removes the only real timing risk in the whole trip.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="hotels">
+  <h2>The best places to stay</h2>
+  <p class="sub">Six properties worth building the trip around, one or two per base. Each links to its own site, where the full galleries and current availability live.</p>
+
+  <div class="gal">
+    <article class="hcard">
+      <img alt="Mountain lodge bungalows above terraced valleys" loading="lazy" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=72&auto=format&fit=crop">
+      <div class="hbody">
+        <div class="hloc">Sapa · Hoang Lien National Park</div>
+        <h3>Topas Ecolodge</h3>
+        <p>Fifty bungalows in local white granite, spread across two conical hilltops 45 minutes outside town. Two heated infinity pools, a Red Dao herbal bath spa, and a Danish head chef. Named to National Geographic's Unique Lodges collection and voted a top-three Asian resort by Condé Nast readers in 2025.</p>
+        <div class="hmeta">The splurge · book earliest</div>
+        <a href="https://topasecolodge.com/" target="_blank" rel="noopener">Visit site →</a>
+      </div>
+    </article>
+
+    <article class="hcard">
+      <img alt="Traditional stilt house homestay among rice terraces" loading="lazy" src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=72&auto=format&fit=crop">
+      <div class="hbody">
+        <div class="hloc">Sapa · Ta Van village</div>
+        <h3>Ta Van Homestays</h3>
+        <p>Family-run stilt houses set directly in the Muong Hoa terraces, ten minutes below town. Meals eaten with the family, guides arranged over breakfast, and trailheads that start at the door. The most honest version of Sapa, and the one your group will actually talk about afterwards.</p>
+        <div class="hmeta">Book on arrival or a few days out</div>
+      </div>
+    </article>
+
+    <article class="hcard">
+      <img alt="Grand colonial-style hotel interior" loading="lazy" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=72&auto=format&fit=crop">
+      <div class="hbody">
+        <div class="hloc">Sapa · town centre</div>
+        <h3>Hotel de la Coupole — MGallery</h3>
+        <p>A theatrical colonial-fantasia pile next to the Fansipan cable car station. Heated indoor pool, full spa, and the only place here that turns a washed-out afternoon into a good one. The sensible hedge against August weather.</p>
+        <div class="hmeta">Best rainy-day insurance</div>
+        <a href="https://all.accor.com/hotel/9077/index.en.shtml" target="_blank" rel="noopener">Visit site →</a>
+      </div>
+    </article>
+
+    <article class="hcard">
+      <img alt="Garden resort villas beneath limestone cliffs" loading="lazy" src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&q=72&auto=format&fit=crop">
+      <div class="hbody">
+        <div class="hloc">Ninh Binh · Hai Nham</div>
+        <h3>Tam Coc Garden Resort</h3>
+        <p>Restored village houses in a walled garden with karst towers on every side. Free bikes, a small pool, and dinner served outdoors. Ten minutes from the Trang An pier and the Hang Mua steps, but it feels an hour from anywhere.</p>
+        <div class="hmeta">Quietest night of the trip</div>
+        <a href="https://tamcocgarden.com/" target="_blank" rel="noopener">Visit site →</a>
+      </div>
+    </article>
+
+    <article class="hcard">
+      <img alt="Traditional junk boat anchored among karst islands" loading="lazy" src="https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=72&auto=format&fit=crop">
+      <div class="hbody">
+        <div class="hloc">Lan Ha Bay · aboard</div>
+        <h3>Orchid Premium Cruise</h3>
+        <p>Balcony cabins, all meals, kayaking and a guide included. The reason to sleep on the water is the hour after the day boats leave and before they return — the bay empty, the rock towers going pink. Lan Ha rather than Ha Long means a fraction of the traffic.</p>
+        <div class="hmeta">One night aboard, one on the island</div>
+        <a href="https://orchidcruises.com.vn/" target="_blank" rel="noopener">Visit site →</a>
+      </div>
+    </article>
+
+    <article class="hcard">
+      <img alt="Old Quarter boutique hotel rooftop at dusk" loading="lazy" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=72&auto=format&fit=crop">
+      <div class="hbody">
+        <div class="hloc">Hanoi · Old Quarter</div>
+        <h3>Hanoi La Siesta Premium</h3>
+        <p>The Old Quarter benchmark: rooftop bar, generous rooms by local standards, and a concierge team that will book your Sapa bus, hold your bags while you're up north, and have a car waiting when you get back. Everything walkable from the door.</p>
+        <div class="hmeta">Best first and last night</div>
+        <a href="https://www.hanoilasiestahotels.com/" target="_blank" rel="noopener">Visit site →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="notes">
+  <h2>Crew notes</h2>
+  <div class="notes">
+    <div class="note"><h3>Booking rhythm</h3><p>Sapa bus and lodge: book now, it's peak domestic season and Topas fills months out. Ninh Binh and Cat Ba: two to three days ahead as you go, so weather can change your mind.</p></div>
+    <div class="note"><h3>Cash</h3><p>Village homestays, guides and boat fees are frequently cash-only. Draw dong in Hanoi before heading up — ATMs in Ta Van are unreliable.</p></div>
+    <div class="note"><h3>Packing that matters</h3><p>Broken-in shoes with grip; the terraces turn to clay when wet. A rain shell, not an umbrella. One warm layer for Sapa nights and Fansipan. Dry bag for the kayak day.</p></div>
+    <div class="note"><h3>Splitting up is fine</h3><p>Fansipan cable car versus a full trek day is the natural fork. Same for the Hang Mua steps. Set a meet-back time and let people choose.</p></div>
+    <div class="note"><h3>Guides</h3><p>In Sapa, hire from the village. In Ninh Binh and Lan Ha you don't need one — boats come with rowers, everything else is self-directed.</p></div>
+    <div class="note"><h3>The swap</h3><p>If the group wants the bigger payoff and doesn't mind rough roads, trade Sapa for the <b>Ha Giang Loop</b> — 3–4 days, better scenery, far fewer people. Same time cost, but it leaves no room for Ninh Binh.</p></div>
+  </div>
+</section>
+
+<section id="weather" style="border-bottom:none;padding-bottom:24px">
+  <div class="warn">
+    <h2>Reading the weather</h2>
+    <p>Late August is <b>rainy season</b>, but it rarely rains all day. The pattern is clear or hazy mornings, humidity building, then a heavy burst mid-to-late afternoon lasting 30 to 90 minutes. Evenings often dry out. That's why every demanding thing here is scheduled before noon.</p>
+    <p>Expect roughly four or five days that follow this pattern, one or two grey ones, and a small chance of a genuinely washed-out stretch. The real risks are <b>landslides</b> closing mountain roads and <b>typhoons</b> suspending boats — both visible in the forecast three or four days out.</p>
+    <p>Be back in Hanoi the night before you fly, keep Ninh Binh and Cat Ba loose, and treat Fansipan as weather-dependent rather than fixed. <b>Windy or nchmf.gov.vn beat generic weather apps</b> for the three-to-five day view.</p>
+  </div>
+</section>
+
+<footer>
+  Northern Vietnam · 25 Aug – 1 Sep · 7 nights · no domestic flights<br>
+  Planning document. Confirm availability directly with each property.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.leghead').forEach(function(h){
+    h.addEventListener('click', function(){
+      var body = document.getElementById(h.dataset.leg);
+      var open = h.getAttribute('aria-expanded') === 'true';
+      h.setAttribute('aria-expanded', String(!open));
+      body.classList.toggle('open', !open);
+    });
+  });
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('.navin a'));
+  var sections = ['route','hotels','notes','weather']
+    .map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id); });
+        }
+      });
+    }, { rootMargin:'-45% 0px -50% 0px' });
+    sections.forEach(function(s){ io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
